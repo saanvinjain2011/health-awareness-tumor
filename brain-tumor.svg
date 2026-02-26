@@ -1,0 +1,17 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7ECF8"/>
+      <stop offset="1" stop-color="#F4F7FB"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="24" fill="url(#g1)"/>
+  <ellipse cx="300" cy="180" rx="130" ry="95" fill="#FFD8D8" stroke="#B42318" stroke-width="4"/>
+  <path d="M250 160C270 120 330 120 350 160" stroke="#B42318" stroke-width="4" stroke-linecap="round"/>
+  <path d="M240 200C265 220 335 220 360 200" stroke="#B42318" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="340" cy="170" r="18" fill="#B42318" fill-opacity="0.2" stroke="#B42318" stroke-width="3"/>
+  <rect x="410" y="95" width="170" height="130" rx="14" fill="white" stroke="#0E6BA8" stroke-width="3"/>
+  <text x="495" y="140" text-anchor="middle" fill="#0E6BA8" font-size="20" font-family="Arial">Brain Tumor</text>
+  <text x="495" y="170" text-anchor="middle" fill="#4F5F7A" font-size="15" font-family="Arial">Cancerous vs</text>
+  <text x="495" y="195" text-anchor="middle" fill="#4F5F7A" font-size="15" font-family="Arial">Non-cancerous</text>
+</svg>

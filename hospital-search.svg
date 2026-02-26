@@ -1,0 +1,23 @@
+<svg width="640" height="360" viewBox="0 0 640 360" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g3" x1="0" y1="0" x2="640" y2="360" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF2DE"/>
+      <stop offset="1" stop-color="#F4F7FB"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" rx="24" fill="url(#g3)"/>
+  <rect x="180" y="70" width="140" height="210" rx="10" fill="white" stroke="#0E6BA8" stroke-width="3"/>
+  <rect x="222" y="95" width="56" height="56" rx="8" fill="#D7ECF8"/>
+  <rect x="244" y="106" width="12" height="34" fill="#B42318"/>
+  <rect x="233" y="117" width="34" height="12" fill="#B42318"/>
+  <rect x="205" y="170" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <rect x="241" y="170" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <rect x="277" y="170" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <rect x="205" y="194" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <rect x="241" y="194" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <rect x="277" y="194" width="28" height="16" rx="4" fill="#C7D3E6"/>
+  <circle cx="430" cy="150" r="56" fill="white" stroke="#2F855A" stroke-width="5"/>
+  <line x1="470" y1="190" x2="528" y2="248" stroke="#2F855A" stroke-width="10" stroke-linecap="round"/>
+  <path d="M430 118L438 136H458L442 148L449 166L430 154L411 166L418 148L402 136H422L430 118Z" fill="#0E6BA8"/>
+  <text x="430" y="275" text-anchor="middle" fill="#4F5F7A" font-size="20" font-family="Arial">Find nearby hospitals</text>
+</svg>
