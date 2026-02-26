@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tumor Learning Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Interactive Educational App</p>
+          <h1>Tumor Learning Studio</h1>
+          <p>
+            Explore symptoms, test your knowledge, bust myths, and find nearby hospitals.
+            Built for education and awareness.
+          </p>
+          <div class="hero-tags">
+            <span>Symptom Explorer</span>
+            <span>Myth Buster</span>
+            <span>Knowledge Quiz</span>
+            <span>Hospital Finder</span>
+          </div>
+        </div>
+        <img src="./assets/tumor.jpg" alt="Tumor illustration" />
+      </header>
+
+      <section class="card visual-row" aria-label="Tumor visuals">
+        <figure>
+          <img src="./assets/brain-tumor.svg" alt="Brain tumor educational illustration" />
+          <figcaption>Brain tumor overview</figcaption>
+        </figure>
+        <figure>
+          <img src="./assets/spinal-tumor.svg" alt="Spinal tumor educational illustration" />
+          <figcaption>Spinal tumor overview</figcaption>
+        </figure>
+      </section>
+
+      <section class="card" aria-labelledby="explorer-title">
+        <h2 id="explorer-title">Interactive Symptom Explorer</h2>
+        <p class="helper">Pick symptoms and duration to get an educational insight summary.</p>
+
+        <form id="explorer-form" class="form-grid">
+          <fieldset>
+            <legend>Symptoms (select all that apply)</legend>
+            <div class="symptom-grid">
+              <label><input type="checkbox" name="symptoms" value="Headache" /> Headache</label>
+              <label><input type="checkbox" name="symptoms" value="Seizures" /> Seizures</label>
+              <label><input type="checkbox" name="symptoms" value="Vision changes" /> Vision changes</label>
+              <label><input type="checkbox" name="symptoms" value="Memory or speech changes" /> Memory or speech changes</label>
+              <label><input type="checkbox" name="symptoms" value="Back pain" /> Back pain</label>
+              <label><input type="checkbox" name="symptoms" value="Numbness or tingling" /> Numbness or tingling</label>
+              <label><input type="checkbox" name="symptoms" value="Weakness in arms or legs" /> Weakness in arms or legs</label>
+              <label><input type="checkbox" name="symptoms" value="Walking or balance difficulty" /> Walking or balance difficulty</label>
+              <label><input type="checkbox" name="symptoms" value="Bladder or bowel changes" /> Bladder or bowel changes</label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>How long has this been happening?</legend>
+            <label><input type="radio" name="duration" value="less than 24 hours" required /> Less than 24 hours</label>
+            <label><input type="radio" name="duration" value="2-7 days" /> 2-7 days</label>
+            <label><input type="radio" name="duration" value="1-4 weeks" /> 1-4 weeks</label>
+            <label><input type="radio" name="duration" value="more than a month" /> More than a month</label>
+          </fieldset>
+
+          <button type="submit">Generate Insight</button>
+        </form>
+      </section>
+
+      <section class="card insight" id="insight" aria-live="polite">
+        <h2>Your Insight Summary</h2>
+        <p id="insight-text">Select symptoms and duration above to generate your educational summary.</p>
+        <ul id="insight-points"></ul>
+      </section>
+
+      <section class="card" aria-labelledby="warning-title">
+        <h2 id="warning-title">Know the Warning Signs Early</h2>
+        <p class="helper">
+          Click a body area to explore common warning signs. This is meant to guide action, not cause fear.
+        </p>
+        <div class="warning-layout">
+          <div class="body-map" role="group" aria-label="Clickable body areas">
+            <button class="body-part active" data-part="head" type="button" aria-label="Head area">Head</button>
+            <button class="body-part" data-part="chest" type="button" aria-label="Chest area">Chest</button>
+            <button class="body-part" data-part="abdomen" type="button" aria-label="Abdomen area">Abdomen</button>
+            <button class="body-part" data-part="spine" type="button" aria-label="Spine area">Spine</button>
+            <button class="body-part" data-part="legs" type="button" aria-label="Legs area">Legs</button>
+          </div>
+          <article class="warning-panel">
+            <h3 id="warning-area-title">Head</h3>
+            <p id="warning-area-summary" class="muted">
+              Common warning signs can include persistent headaches, new seizures, vision changes, and memory/speech changes.
+            </p>
+            <h4>When to see a doctor</h4>
+            <ul id="warning-doctor-list">
+              <li>Go urgently if there is a new seizure, sudden weakness, or confusion.</li>
+              <li>Book a visit soon for headaches that are getting worse or lasting many days.</li>
+              <li>Do not ignore repeated vision or speech changes.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card grid-two" aria-labelledby="engage-title">
+        <h2 id="engage-title">Learn & Play</h2>
+
+        <article class="panel">
+          <h3>Myth Buster</h3>
+          <p class="helper">Click to reveal common myths and facts about tumors.</p>
+          <button id="myth-btn" type="button">Show Myth vs Fact</button>
+          <p id="myth-output" class="muted">No myth shown yet.</p>
+        </article>
+
+        <article class="panel">
+          <h3>Quick Knowledge Quiz</h3>
+          <form id="quiz-form" class="quiz-form">
+            <fieldset>
+              <legend>1) Which statement is true?</legend>
+              <label><input type="radio" name="q1" value="a" required /> All tumors are cancerous.</label>
+              <label><input type="radio" name="q1" value="b" /> Some tumors are non-cancerous (benign).</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>2) Which symptom can be an urgent warning sign?</legend>
+              <label><input type="radio" name="q2" value="a" required /> Mild tiredness only.</label>
+              <label><input type="radio" name="q2" value="b" /> New seizures or sudden weakness.</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>3) Spinal tumors can affect:</legend>
+              <label><input type="radio" name="q3" value="a" required /> Nerves and movement.</label>
+              <label><input type="radio" name="q3" value="b" /> Hair color only.</label>
+            </fieldset>
+
+            <button type="submit">Check My Score</button>
+          </form>
+          <p id="quiz-result" class="muted">Take the quiz to see your score.</p>
+        </article>
+      </section>
+
+      <section class="card" aria-labelledby="hospital-title">
+        <h2 id="hospital-title">Find Hospitals by Location</h2>
+        <img class="hospital-illustration" src="./assets/hospital-search.svg" alt="Hospital finder illustration" />
+        <p>Enter a city or area (example: Boston, MA or Chicago, IL) to find hospital options nearby.</p>
+        <div class="quick-locations" aria-label="Quick location buttons">
+          <button type="button" class="chip" data-location="Boston, MA">Boston, MA</button>
+          <button type="button" class="chip" data-location="Houston, TX">Houston, TX</button>
+          <button type="button" class="chip" data-location="Chicago, IL">Chicago, IL</button>
+          <button type="button" class="chip" data-location="Seattle, WA">Seattle, WA</button>
+        </div>
+        <form id="hospital-form" class="hospital-form">
+          <input id="location-input" type="text" placeholder="Enter city, state, or address" required />
+          <button id="hospital-submit" type="submit">Find Best Hospitals</button>
+        </form>
+        <p class="muted" id="hospital-status">No search yet.</p>
+        <ol id="hospital-list"></ol>
+      </section>
+
+      <section class="card" aria-labelledby="assistant-title">
+        <h2 id="assistant-title">AI Health Assistant</h2>
+        <p class="helper">
+          Ask questions like: "What do my symptoms suggest?", "What should I do next?", or
+          "Explain brain vs spinal tumors simply."
+        </p>
+        <div class="assistant-quick" aria-label="Assistant quick questions">
+          <button type="button" class="assistant-chip" data-q="Explain my insight summary">Explain my insight summary</button>
+          <button type="button" class="assistant-chip" data-q="What warning signs need urgent care?">What warning signs need urgent care?</button>
+          <button type="button" class="assistant-chip" data-q="What should I ask the doctor?">What should I ask the doctor?</button>
+        </div>
+        <div id="assistant-chat" class="assistant-chat" aria-live="polite">
+          <div class="assistant-msg bot">
+            I am your educational AI assistant. I can explain symptoms, quiz outcomes, and hospital options.
+          </div>
+        </div>
+        <form id="assistant-form" class="assistant-form">
+          <input id="assistant-input" type="text" placeholder="Type your question..." required />
+          <button type="submit">Ask Assistant</button>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="info-title">
+        <h2 id="info-title">General Information</h2>
+        <div class="info-grid">
+          <article>
+            <h3>Cancerous (Malignant) Tumors</h3>
+            <ul>
+              <li>Can grow quickly and invade nearby tissue.</li>
+              <li>May spread to other body areas (metastasis), depending on type.</li>
+              <li>Usually need urgent specialist evaluation and treatment planning.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Non-cancerous (Benign) Tumors</h3>
+            <ul>
+              <li>Do not spread to distant organs.</li>
+              <li>Can still cause serious symptoms by pressing on brain or spinal structures.</li>
+              <li>Management may include monitoring, surgery, or targeted therapy.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Brain Tumors</h3>
+            <ul>
+              <li>Common symptoms: headaches, seizures, memory/speech changes, weakness, vision changes.</li>
+              <li>Diagnosis often uses MRI/CT and sometimes biopsy.</li>
+              <li>Treatment can include surgery, radiation, chemotherapy, and rehabilitation.</li>
+            </ul>
+          </article>
+
+          <article>
+            <h3>Spinal Tumors</h3>
+            <ul>
+              <li>Can occur in spinal cord, surrounding membranes, or vertebrae.</li>
+              <li>Common symptoms: back pain, numbness, weakness, walking difficulty, bladder/bowel changes.</li>
+              <li>Early diagnosis helps reduce risk of long-term neurologic damage.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <footer class="disclaimer">
+        <strong>Medical disclaimer:</strong> This app is for learning only. It does not diagnose disease.
+        Hospital results are best matches based on public map data and distance, not official quality rankings.
+        For personal medical advice, speak with a qualified doctor.
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
